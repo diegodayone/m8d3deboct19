@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: true,
         default: "User"
-    }
+    },
+    facebookId: String
 })
 
 userSchema.plugin(plm)

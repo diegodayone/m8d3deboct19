@@ -40,5 +40,12 @@ router.post("/refresh", passport.authenticate("jwt"), async(req,res)=>{
     })
 })
 
+router.post("/fbLogin", passport.authenticate("fb"), async(req,res)=>{
+    const token = generateToken({ _id: req.user._id, username: req.user.username })
+    res.send({
+        access_token: token,
+        username: req.user.username
+    })
+})
 
 module.exports = router;
