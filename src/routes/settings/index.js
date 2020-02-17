@@ -8,7 +8,7 @@ router.get("/", async (req, res)=>{
 })
 
 router.post("/makeSuper/:username", async (req, res) =>{
-    await User.findOneAndUpdate({ username: req.params.username}, { role: "SuperUser"})
+    await User.findOneAndUpdate({ username: req.params.username }, { role: "SuperUser"})
     res.send("Done!")
 })
 
