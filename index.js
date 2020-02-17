@@ -6,7 +6,7 @@ const { superOnly } = require("./src/utils/auth")
 const userRouter = require("./src/routes/users")
 const settingsRouter = require("./src/routes/settings")
 
-mongoose.connect("mongodb://127.0.0.1:27017/m8", { useNewUrlParser: true, useUnifiedTopology: true }, (err) => console.log(err ? err : "Mongo Connected"))
+mongoose.connect(process.env.MONGODB, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => console.log(err ? err : "Mongo Connected"))
 
 const server = express();
 
