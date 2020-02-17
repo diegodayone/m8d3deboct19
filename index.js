@@ -14,8 +14,8 @@ server.use(cors())
 server.use(express.json())
 server.use(passport.initialize())
 
-server.use("/", (req,res)=> res.send("Server is running!"))
 server.use("/user", userRouter)
 server.use("/settings", passport.authenticate("jwt"), superOnly, settingsRouter)
+server.use("/", (req,res)=> res.send("Server is running!"))
 
 server.listen(process.env.PORT || 3551, ()=> console.log("Web Server is running"))
