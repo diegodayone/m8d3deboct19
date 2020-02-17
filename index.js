@@ -14,6 +14,7 @@ server.use(cors())
 server.use(express.json())
 server.use(passport.initialize())
 
+server.use("/", (req,res)=> res.send("Server is running!"))
 server.use("/user", userRouter)
 server.use("/settings", passport.authenticate("jwt"), superOnly, settingsRouter)
 
